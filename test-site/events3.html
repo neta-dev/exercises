@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	<title>Wedding</title>
+	<style type="text/css">
+    * {
+        margin-top: 20px;
+        padding-left: 50px;
+
+    }
+    .main {
+        
+        width: 70%;
+
+    }
+	.zig-zag {
+    background: linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+    linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: #EC173A;
+    float: left;
+}
+.vertical-stripes {
+			float: right;
+            border: solid 1px red;
+            background: repeating-linear-gradient( 
+            90deg,
+            #fff,
+            #fff 20px,
+            #000 20px,
+            #000 40px);
+            height: 200px;
+            width: 200px;
+            margin:  15px;
+            margin-top: 30%;
+        }
+.vertical-stripes2 {
+			margin:  15px;
+            border: solid 2px red;
+            background: linear-gradient( 
+            90deg,
+            #fff,
+            #fff 20px,
+            #000 20px,
+            #000 40px);
+            height: 200px;
+            width: 200px;
+            float: right;
+        }
+
+        .horizontal-stripes {
+            border: solid 2px red;
+            background: linear-gradient( 
+            #fff,
+            #fff 20px,
+            #000 20px,
+            #000 40px);
+            height: 200px;
+            width: 200px;
+            float: right;
+
+        }
+div {
+	width: 200px;
+	height: 200px;
+   
+}
+
+    
+ </style>
+
+<body>
+    <div class="main">
+    	<div class="zig-zag"></div>
+    	<div class="vertical-stripes"></div>
+    	<div class="vertical-stripes2"></div>
+    	<div class="horizontal-stripes"></div>
+    </div>
+    <svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"
+      style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%"
+      style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana"
+  x="50" y="86">SVG</text>
+Sorry, your browser does not support inline SVG.
+</svg>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<header>
+
+  <style>
+    table {
+      width:20%;
+      background-color: #eee;
+      margin-top: 50px;
+    }
+    div {
+      margin-top: 100px;
+
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td ,a{
+      padding: 15px;
+      text-align: left;
+
+    }
+    table#t01 tr:nth-child(even) {
+      background-color: #eee;
+
+    }
+
+    form{
+      text-align: center;
+      width: 25%;
+     
+
+    }
+
+  </style>
+
+  <script>
+    var products = [];
+    var contacts = [];
+
+    function buildTable(){
+      console.log("Inside buildTable()");
+      var HTML = "<table id='tblcontacts'>" +
+                    "<tr>" +
+                        "<th>Id</th>" +
+                        "<th>First Name</th>" +
+                        "<th>Last Name</th>" +
+                        "<th>Changes</th>" +
+                    "</tr>";
+        
+      console.log("contacts.length:" + contacts.length);
+
+        for(i=0;i<contacts.length;i++){
+          HTML+="<tr>" + 
+                    "<td>" + i + "</td>" + 
+                    "<td>" + contacts[i].firstName + "</td>" +
+                    "<td>" + contacts[i].lastName + "</td>" +
+                    "<td><a id='" + i + "'" + " href='#' onclick='editRow(" + i + ")'>Edit /</a>" +
+                        "<a id='" + i + "'" + " href='#' onclick='deleteRow(" + i+")'>Delete</a>" + 
+                    "</td>" + 
+                  "</tr>";
+        } //end for
+          HTML+="</table>";
+        
+        console.log(HTML);
+        return HTML;
+    }//end function
+
+   
+    function addPerson(){
+              let person = {"firstName":"", "lastName":"", "phone":"", "address":""};
+              let personId = console.length;
+
+              person.firstName = document.getElementById('fname').value;
+              person.lastName = document.getElementById('lname').value;
+              person.phone = document.getElementById('phone').value;
+              person.address = document.getElementById('address').value;
+
+              contacts.push(person);
+              console.log(contacts);              
+              
+              document.getElementById("formPerson").innerHTML = displayPersonForm("save", personId);
+              document.getElementById("tblcontacts").innerHTML = buildTable();
+              
+              // Set focul on First Nama field
+              document.getElementById("firstName").focus();
+    }//end fun
+
+    // Displays contact corresponing to arrIndex parameter in the form
+    // Change submit button: onclick("save()")  value to "Save"
+    function editRow(arrIndex) {
+      document.getElementById("worker").value = products[arrIndex];
+      document.getElementById("action").setAttribute('onclick', 'save(' + arrIndex + ')');
+      document.getElementById("action").innerHTML = "Save";
+      }//end function
+
+    function deleteRow(arrIndex) {
+      products.splice(arrIndex, 1);
+      buildTable();
+    }//end function
+
+    function save(arrIndex){
+      products[arrIndex] = document.getElementById("worker").value;
+       document.getElementById("worker").value = "";
+      buildTable();
+      document.getElementById("action").setAttribute('onclick', 'addProduct()');
+      document.getElementById("action").innerHTML = "Add Product";
+
+    }//end function
+
+    // Build formPerson and set it's attributes depending on value of paramenter "mode"
+    // if mode is "add": show form with emply inputs
+    // if mode is "save": show form with emply inputs
+    function displayPersonForm(mode, arrIndex){
+      let strHTML = "";
+      let formOnSubmitValue = ""; // will be set to "addPerson() " or "savePerson()" respectevly
+      let inputId = -1;           // will be set to value of parameter 'arrIndex' or -1
+      let inputFirstNameValue = "";
+      let inputLastNameValue = "";
+      let inputPhoneValue = "";
+      let inputAddressValue = "";
+      let buttonSubmitValue = ""; // will be set to "Add Person " or "Save Person" respectevly    
+
+      if(mode=="add"){
+         formOnSubmitValue = "addPerson()"; 
+         buttonSubmitValue = "Add Person";
+         inputId = -1;  
+      }else if (mode=="save") {
+          formOnSubmitValue = "addPerson()"; 
+          let person = contacts[arrIndex];          
+          inputId = arrIndex;           // will be set to value of parameter 'arrIndex' or -1
+          inputFirstNameValue = person.firstName;
+          inputLastNameValue = person.lastName;
+          inputPhoneValue = person.phone;
+          inputAddressValue = person.address;
+          buttonSubmitValue = "Add Person";
+      } else {
+          console.log("Error in displayPersonForm() - incorrect value of parameter 'mode" + arrIndex);
+      }
+
+      strHTML = '<form id="formPerson" onsubmit="event.preventDefault(); ' + formOnSubmitValue + '">' +
+                  '<fieldset>' +
+                      '<legend>Person</legend>' +
+                      '<input type="hidden" id="personId" value="' + inputId + '">' +
+                      'First Name:<input id="fname" type="text" name="firstName" value="' + inputFirstNameValue + '"><br>' +
+                      'Last Name:<input id="lname" type="text" name="lastName" value="' + inputLastNameValue + '"><br>' +
+                      'Phone:<input id="phone" type="text" name="phone" value="' + inputPhoneValue + '"><br>' +
+                      'Address:<input id="address" type="text" name="address" value="' + inputAddressValue + '"><br>' +
+                      '<input type="submit" name="action" id="action" value="' + buttonSubmitValue + '">' +
+                  '</fieldset>' +
+                '</form>';
+      console.log(strHTML);
+
+      return strHTML;
+    } // end function
+
+  </script>
+
+</header>
+
+<body>
+  <h3>Page: Home Page</h3>
+  <a href="./temp.html">Temp Page</a>
+
+  <div style="padding: 2px 4px;">
+  </div>
+
+  <div style="text-align:center">
+    <form id="formPerson" >
+    <!-- display formPerson in 'add' mode -->
+    <script type="text/javascript">
+      document.getElementById("formPerson").innerHTML = displayPersonForm("add", -1);
+    </script>        
+  </div>
+
+  <div style="text-align:center">
+  
+    <table id="tblcontacts" >
+    <script type="text/javascript">
+      document.getElementById("tblcontacts").innerHTML = buildTable();      
+    </script>    
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+ .btn{
+
+	background-color: #f1f1f1; /*light grey*/
+	padding: 15px 10px;
+	text-align: center;
+	color: green;
+	display: inline-block;
+	font-size: 16 px;
+	margin: 5px 8px;
+	width: 40px;
+	height: 40px;
+	}
+
+.btn-wide{
+	width: 15%;
+}
+
+.btn-green{
+	background-color:  green;
+	width: 160px;
+	height: 60px;
+	color: white;
+
+}
+
+.btn-grey{
+	background-color:grey;
+	width: 80px;
+	color: #000000;
+	font-size: 10px;
+}
+
+
+body{
+	display:block;
+	text-align: center;
+	background-color: #cdcdcd;
+
+}
+
+h1 {
+	font-family: Times New Roman;
+	text-align: 16px;
+	text-transform: uppercase;
+}
+
+h2{
+
+	display: inline-block;
+	background-color: green;
+	width:50%;
+	font-size: 40px;
+	color: #ffffff;
+	
+	
+
+}
+

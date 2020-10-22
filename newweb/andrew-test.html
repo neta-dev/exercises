@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+   
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        
+    function myFunction() {
+        document.getElementById("5images").style = "display:none";
+        document.getElementById("1image").style = "display:block";
+        document.getElementById("foto").style ="width:220px; height:227px;border-radius:35px;" }
+    
+   
+    function myFunction1() {
+        document.getElementById("5images").style = "display:none";
+        document.getElementById("1image").style = "display:block";
+        document.getElementById("foto").style ="width:440px; height:454px; border-radius:35px; "} 
+    
+    function showHiddenDiv() {
+        document.getElementById("foto").style = "display:none";
+        document.getElementById("5images").style = "display:block";
+    } 
+         
+    </script>
+</head>
+
+<body>
+    
+    <div id="1image">
+        <img id="foto" src="scream.jpg" ><br>    
+    </div>
+    
+    <div id="5images" style="display: none; float: left;">
+        <img id="foto" src="scream.jpg" >
+        <img id="foto" src="scream.jpg" style="float: right;" ><br>
+        <img src="compman.gif" style="display: block;margin-left: auto;     margin-right: auto "><br>
+        <img id="foto" src="scream.jpg" >
+        <img id="foto" src="scream.jpg" style="float: right;" >
+    </div>
+    
+    <div style="float: left">
+        <button onclick="myFunction()">resize</button>
+        <button onclick="myFunction1()">reresize</button>
+        <button onclick="showHiddenDiv()">Multiply</button>
+    </div>
+    
+    
+ 
+ 
+ 
+ 
+
+
+</body>
+</html>

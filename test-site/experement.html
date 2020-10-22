@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>my experement</title>
+
+  <script type="text/javascript">
+    var countries = ["Russia", "Latvia", "Uzbekistan", "Israel"];
+
+    function loadCountries(){
+      document.getElementById("strani").innerHTML = countries;
+    }
+
+    function addCountry(){
+      var c = prompt("Please enter country name");
+      countries[countries.length] = c;
+      document.getElementById("strani").innerHTML = countries;
+
+    }
+
+    function deleteCountry(){
+     delete countries[0];
+      document.getElementById("strani").innerHTML = countries;
+
+    }
+
+  </script>
+
+</head>
+<body onload="loadCountries()">
+
+  <button onclick="addCountry()">Add  Country</button>
+
+  <p id="strani"></p>
+
+  <button onclick="deleteCountry()">Delete  Country</button>
+
+
+</body>
+</html>

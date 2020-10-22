@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+ 
+</head>
+<body style="background-color: #808000">
+
+	<button id="button"  onclick="">Get started</button>
+    
+
+	<div>
+	<p id="head">The Leader in Website Design</p>
+	</div>
+ <header>
+ 	<h1>Compare the Best Domain Hosting of 2019</h1>
+
+     <p style="margin-left: 50px">Search our expert reviews to compare the leading domain hosting<br>companies and platforms available. Check out each provider's special<br> offers and get your website up and running, today.</p>
+    
+    <h4>Last Updated November 2019<h4>
+	</h4>We receive referral fees from partners Advertising Disclosure</h4>
+
+			</nav>
+
+ 		</header>
+ 	<style>
+         
+        button{
+
+         	background-color: orange;
+         	width: 100px;
+         	height: 45px;
+         	box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2);
+			}
+         
+        button:hover{
+         	background-color: red;
+         	color: #000000;
+         	font-size: 25px;
+         	/*opacity: 15%;*/
+         	width: 120px;
+         	height: 60px;
+			}
+         
+
+		#head{
+			font-size: 50px;
+			margin-left: 50px;
+			color: #ffffff;
+	}
+
+ 		header{
+	 		width: 1800px;
+	 		height: 250px;
+	 		background-color: blue;
+	 		color: #ffffff;
+	 		margin-left: 35px;
+	 		text-align: center;
+	 		background-image: url(css/webdev.jpg);
+	 		background-size: cover;
+	 		/*margin-top: 60px;
+	 		margin-left: 50px;*/
+	 		margin: auto;
+
+	}
+
+		p{
+		      margin-right: 150px;
+		      text-align: left;
+	}
+
+		h4{
+				text-align: left;
+				margin-left: 50px;
+	}
+	div.parent{
+		position: relative;
+		border: 3px solid yellow;
+		width: 50%;
+		height: 200px;
+		margin-left: 52px;
+		
+	}
+
+	
+    /*#hidden{
+    	display: none;
+    }*/
+
+	#hide:hover{
+		/*display: block;*/
+		width: 99.5%;
+		height: 30%;
+		background-color: #ffffff;
+		margin: auto;
+		/*position: absolute;
+		bottom: 0px;*/
+		}
+
+	
+
+	img:hover{
+         width: 30%;
+		float: right;
+	}	
+
+	</style>
+
+	
+
+ 
+<img src="1.jpg" alt="foto">
+<img class="2" src="2.jpg" alt="foto2">
+<p id="par"></p>
+
+<div class="parent" onmouseover="displaySmallDiv()" onmouseout="hideSmallDiv()">
+
+	<div id="hide">
+		<button onclick="openMe()">open</button>
+		<button onclick="closeMe()">close</button>
+	</div>
+</div>
+
+	<script>
+		// function displaySmallDiv(){
+		// 	document.getElementById('hide').style.display = "block";
+			
+
+		// }
+
+		// function hideSmallDiv(){
+  //            document.getElementById('hide').style.display = "none";
+		// }
+		function openMe(){
+			document.getElementById('par').innerHTML = "THANK YOU!";
+			
+		}
+
+		function closeMe(){
+			document.getElementById('par').innerHTML = "";
+			
+		}
+		
+	</script>
+
+</body>
+</html>

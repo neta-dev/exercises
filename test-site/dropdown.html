@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <title></title>
+	<script type="text/javascript">
+		function changeOption(){
+			// var w = document.getElementById('data').value;
+			document.getElementById('sel').value = document.getElementById('data').value;
+		}
+	</script> -->
+    <!-- <script type="text/javascript">
+        function
+        var koko = ["Natasa"];
+        document.getElementById('birth');
+        
+    </script> -->
+    <script type="text/javascript">
+        function check(){
+            var email1 = document.getElementById('email_addr');
+            var email2 = document.getElementById('email_repeat');
+            if (email1.value != email2.value){
+                alert("The two emails must match!");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- <select id="sel">
+    	<option>---------</option>
+    	<option value="Natasa">Natasa</option>
+    	<option value="Andrew">Anrew</option>
+    	<option value="Yasmin">Yasmin</option>
+    	<option value="Angel" selected>Angel</option>
+    	<option value="Obi">Obi</option>
+    </select>
+    <input id="data">
+    <button onclick="changeOption()">Fill out</button>
+    <button onclick="changeOption()">Clear</button>
+ -->
+ <form action="/action_page.php"><!--Click the "Submit" button and the form-data will be sent to a page on the server called "/action_page.php"-->
+
+    <!--  <label for='name'>Name</label>
+     <input type='text' id = 'name'name = 'name' placeholder="name"><br>
+     <label>Email:<input type='email' name='email' placeholder="email@.com"></label><br>
+     <label for='birth'>Birth</label>
+     <input type='date' id='birth' value='birth'><br>
+     <input type='submit' value="Click Here">
+     <input type="color" name="color"><br/>
+     <input type="text" required pattern="[0-9]{7}" placeholder="[0-9]{7}"> -->
+
+     <label>Preffered email address:
+     <input type="email" id="email_addr" name="email1" value="neta.blumko@gmail.com" required>   
+    </label><br>
+
+    <label>Repeat email address:
+     <input type="email" id="email_repeat" name="email2" required onchange="check()">   
+    </label><br>
+
+    <input type= "submit" value = "Confirm Emails!" onclick="return check();">
+
+    </form>
+
+ 
+</body>
+</html>
