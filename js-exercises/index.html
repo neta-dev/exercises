@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    
+</head>
+<body>
+    
+    
+    <script>
+		document.write(`<h2>Page: ${document.title} </h2>`);
+        document.write(buildNavBar());
+        setActiveClass();
+    </script> 
+    
+    <p id="demo"></p>
+    <a href="nata.html">Nata Page</a>
+    <a href="layout.html">layout</a>
+
+    <div style="width: 45%">
+        <form onsubmit="return false" >
+            <fieldset>
+                <legend>Enter new person</legend>
+                <input type="hidden" id="personId" name="personId">
+                <label for="first">First Name:</label><input type="text" name="first" id="firstName" autofocus><br>
+                <label for="last">Last Name</label><input type="text" name="last" id="lastName"><br>
+                <label for="dob">DOB:</label><input type="text" name="dob" id="dob"><br>
+                <button onclick="addPerson(); buildPresonsList()">Add Person</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="personsList">
+        
+    </div>
+    
+    <script>
+         var persons = [];
+         let person = {lastname:"", firstName:"", age:""};
+        person.age = 21;
+        person.firstName = "Natasha";
+        person.lastname = "Blumental";
+        persons.push(person);
+        //person 2
+        person.firstName = "Yasmin";
+        person.lastname = "Blumko";
+        person.age = 11;
+        persons.push(person); */
+
+         document.getElementById("demo").innerHTML = persons.length + " persons recorded";
+    </script>
+
+</body>
+</html>

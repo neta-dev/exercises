@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./temp.js"></script>
+</head>
+<body>
+    <input type="text" id="f">F<br>
+    <input type="text" id="c">C<br>
+    <button onclick="convert()">Convert</button>
+    <script>
+        function convert(){
+            let f = document.getElementById('f');
+            let c = document.getElementById('c');
+            c.value = fahrToCelsius(f.value);
+        }
+        
+        
+    </script>
+</body>
+</html>

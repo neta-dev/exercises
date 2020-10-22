@@ -1,0 +1,130 @@
+*** monday.html start 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+   
+   <textarea name="" id="text" cols="30" rows="10"></textarea>
+    <button onclick="showMsg('text', 'result')">Show Below</button><br>
+    <textarea name="" id="result" cols="30" rows="10"></textarea><br>
+     <input type="radio" name="" id="marks"> , <br> 
+     <input type="radio" name="" id="marks"> ;<br>
+     <input type="radio" name="" id="marks"> -<br>
+     <input type="radio" name="" id="marks"> |<br><br>
+
+
+   
+  
+
+
+    <script>
+      function showMsg(id1, id2) {
+          let x = document.getElementById(id1);
+           //    console.log( x.value);
+           document.getElementById(id2).value  = x.value;
+          x.value = "";
+      
+        } 
+      
+   </script>
+</body>
+</html>
+*** monday.html end
+
+*** sandbox.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   <style>
+       block2 {
+          margin-right: 50%;
+          
+       }
+       .textarea {
+
+           margin-right: 40px;
+       }
+       .textarea2 {
+          margin-left: 30%;
+       }
+       .knopka {
+           margin-left: 40%;
+           margin-top: 40px;
+       }
+       .card{
+  display: flex;
+}
+.card-block{
+  width: 100px;
+  height: 50px;
+  border: 1px solid;
+}
+   </style>
+</head>
+<body style="display: inline-block;">
+    
+    
+
+       
+ <div class="block1">
+    <div class="block2">
+        <textarea class="textarea"  name="text" id="" cols="20" rows="5"></textarea>
+        <textarea  name="text" id="" cols="20" rows="5"></textarea>
+
+        </div>
+         
+        <input type="radio" id="coma" name="delimeter" value=",">
+        <label for="comma">,</label>
+        <input type="radio" id="semi-colon" name="delimeter" value=";">
+        <label for="comma">;</label>
+        <input type="radio" id="hyphen" name="delimeter" value="-">
+        <label for="comma">-</label>
+        <input type="radio" id="palka" name="delimeter" value="|">
+        <label for="comma">|</label>
+</div> 
+
+ <button onclick="#" class="knopka">Parse</button>
+ <div>
+ 
+ <textarea class="textarea2" name="result" id="" cols="30" rows="10"></textarea>
+</div>    
+        
+<div class="card">
+    <div class="card-block"></div>
+    <div class="card-block"></div>
+    <div class="card-block"></div>
+  </div>  
+
+    
+</body>
+</html>
+*** sandbox.html end
+
+*** function.js start
+unction myFunction(txt,znak) {
+    let start = 0;
+    let end = 0;
+    let str = "";
+      do {
+          end = txt.indexOf(znak, start);
+          str = str + txt.substring(start,end) + '\n';
+          start = end + 1;
+      }while(end !=-1)
+     return str;
+   } 
+   
+    let mySource = "Natasha,Dasha,Masha,Pasha,Natasha,Dasha,Masha,Pasha,Natasha,Dasha";
+    let mySource2 = "Natasha;Dasha;Masha;Pasha;Natasha;Dasha;Masha;Pasha;Natasha;Dasha";
+    let x = "Natasha-Dasha-Masha-Pasha-Natasha-Dasha-Masha-Pasha-Natasha-Dasha,";
+    
+    *** function.js end
+

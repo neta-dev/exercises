@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        .exercise {
+            display: block;
+            border: 10px solid darkgrey;
+            background-color: darkgrey;
+            color: brown;
+            width: 250px;
+            height:300px;
+            margin: auto;
+            line-height: 25px;
+           
+        }
+    </style>
+
+</head>
+<body>
+    <div  class="exercise">
+        <input type="text" name="" id="from">
+        <input type="text" name="" id="to">
+        <input type="text" name="" id="step">
+        <button onclick="printNumbers()">Print</button>
+        <textarea name="" id="result" cols="30" rows="10"></textarea>
+        <p id="demo"></p>
+    </div>
+
+    <script>
+            function printNumbers() {
+            let from = +document.getElementById('from').value;
+            let to = +document.getElementById('to').value;
+            let step = +document.getElementById('step').value;
+
+            let result = "";
+            for (let i = from; i < to; i = i + step) {
+                // console.log(i);
+                 result = result + i + '\n';
+            }
+            document.getElementById('result').value = result;
+           }
+
+        //    function myFunction() {
+        //        prompt("Enter your pasword");
+        //        return ("123456");
+        //    }
+        //    document.getElementById('demo').innerHTML = myFunction();
+
+        //   let myFunction =  function  () {
+        //        console.log("here is a message");
+        //    }
+        //   myFunction();
+
+          let myFunction = function (message, firstName) {
+              console.log(message);
+              console.log(firstName);
+          }
+          myFunction('Hello','Natasha');
+         
+
+          
+
+           
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+input[type="text"] {
+  display: inline-block;
+  padding: 5px;
+  font    : 1.4em/1.5em "handwriting", cursive, sans-serif;
+  padding : 5 10px;
+  margin  : 0;
+  width   : 40%;
+}
+
+/* input, textarea {
+  font    : 1.4em/1.5em "handwriting", cursive, sans-serif;
+  border  : 1px black;
+  padding : 0 10px;
+  margin  : 0;
+  width   : 40%;
+  background : none;
+} */
+
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  font-weight: bold;
+}​
+
+
+  button{
+    display: block;
+    padding: 14px 5px;
+    margin-top: 10px;
+  
+  }
+
+  button:hover{
+    cursor: pointer;
+    background-color: green;
+    padding: 16px 28px;
+    color:white;
+    font-weight: bold;
+  }
+  button:active{
+    font-weight: normal;
+    border-radius: 10%;
+    background-color: rgb(235, 122, 17);
+    cursor:progress;
+  }
+
+/* start navbar style */
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+
+
+
+  

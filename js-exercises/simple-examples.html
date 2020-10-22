@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Simple JS Examples</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>		
+</head>
+
+<body>
+	<script>
+		document.write(`<h2>Page: ${document.title} </h2>`);
+        document.write(buildNavBar());
+        setActiveClass();
+	</script>
+
+	<!-- <a href="./index.html">Back to 'index.html'</a> -->
+
+	<div id="div1">
+		
+	</div>
+
+	<button onclick="generateParagraphs('div1', 'This is new paragraph', 12)">Generate paragraphs</button>
+	<button onclick="paintParagraphs()">Paint paragraphs</button>
+	<button onclick="clearDivContents('div1')">Clear paragraphs</button>
+
+	<div id="div2">
+		
+	</div>
+
+	<script type="text/javascript">
+		// var name = greeting("gav-gav");
+		
+		var h1s = document.getElementsByTagName('h1');
+		console.log("thare are " + h1s.length + " elements of 'h1' type");
+
+		function onClick(){
+			let pTags = document.getElementsByTagName('p');
+			console.log("found " + pTags.length + " paragraphs");
+			 
+			for (let i=0; i < pTags.length; i++){
+				if(i % 2 != 0) pTags[i].style.backgroundColor = "lightgrey";
+			}
+		}
+
+		function greeting(message){
+		let msg = prompt("Hi, Dear friend!\nYou said " +  message + "\n,but what is your name?");
+		// console.log("before If statement " +msg);
+		if(!msg) msg = "User didn't type anything at the prompt";
+		console.log(msg);
+		return msg;
+	}
+
+		
+
+		
+
+		//alert("Hello!");
+		// var name = prompt("Please enter your name");
+		// document.write(name);
+		// document.write("<h1>" + name + "</h1>");
+		// document.write(document.baseURI+"<br>");
+		// document.write(document.title+"<br>");
+		// document.wirte(window.innerWidth);
+		// console.log(name);
+		// var date = Date();
+		// document.write(date);
+		// var location=window.location;
+		// document.write(location);
+		// document.getElementById('test').innerHTML="Hello!";
+		// console.log("MY secret message 2");
+	</script>
+	
+</body>
+</html>
