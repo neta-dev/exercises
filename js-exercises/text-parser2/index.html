@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Parser2</title>
+  </head>
+  <body>
+    <h1>Parse Text</h1>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <form>
+        <div class="form-group">
+            <label for="source">Text</label>
+            <textarea class="form-control" id="source" rows="3"></textarea>
+          </div>
+        <div class="form-group">
+          <label for="delim">Delimeter</label>
+          <select class="form-control" id="delim">
+            <option>- Select Option Bellow -</option>
+            <option>,</option>
+            <option>;</option>
+            <option>-</option>
+            <option>|</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg"
+            onclick="myFunction()"
+        >Parse</button>
+        <div class="form-group">
+          <label for="result">Result</label>
+          <textarea class="form-control" id="result" rows="3"></textarea>
+        </div>
+        
+      </form>
+
+      <script>
+          function myFunction(){
+             let src = document.getElementById('source');
+             let delim = document.getElementById('delim');
+             let result = document.getElementById('result');
+            
+             result.value = parseText(src.value, delim.value);
+             
+             src.value = '';
+             delim.value = '- Select Option Bellow -';
+
+          }
+
+          function parseText(txt,znak) {
+            let start = 0;
+            let end = 0;
+            let str = "";
+            do {
+                end = txt.indexOf(znak, start);
+                str = str + txt.substring(start,end) + '\n';
+                start = end + 1;
+            }while(end !=-1)
+
+            return str;
+        } 
+      </script>
+
+  </body>
+</html>
